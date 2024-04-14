@@ -7,3 +7,5 @@ deletePost.js在原本的小組程式碼範例中 寫的很亂,已重新改寫
 //留意DB連線字串設定在config.env  這個連線字串 是使用設在 Cloud 上的Mogoonse alias 中的連線資訊
 //佈署到Render之後,也是讀此遠端DB
 //要在compass 查看的話,可先去Mogoonse alia 設定連線到compass
+
+config.env 因是練習所以特地傳上來（正式環境不可上傳此檔）
