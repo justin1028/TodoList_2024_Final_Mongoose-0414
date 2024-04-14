@@ -5,8 +5,7 @@ const successHandle  = require("./successHandle");
 
 
 
-    
-
+console.log ('tt');
 async function getRoom(req, res) {
   try {
       const rooms = await Room.find();

@@ -4,6 +4,12 @@ const errorHandle    = require("./errorHandle");
 const successHandle  = require("./successHandle");
 
 async function  patchRoom(req, res) {
+  console.log("Patch in");
+  let body = '';
+  req.on('data', (chunk) => {
+    body += chunk;
+  });
+
 req.on("end",  () => {
     console.log('update one');
     try {
