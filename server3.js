@@ -77,7 +77,7 @@ const requestLister = async (req, res) => {
   
   } else if (req.url.startsWith("/rooms/") && req.method == "PATCH") {
     console.log("Patch");
-  patchRoom(req, res);
+    patchRoom(req, res);
   }
 }
 
