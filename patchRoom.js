@@ -30,8 +30,18 @@ req.on("end",  async () => {
                       console.log("update success")                   
                      // successHandle(res,result);  
                    })
-                   console.log(result) //請特別留意result 更新後竟然是undefined,所以successHandle(res,result) 執行會有異常
-            }    else {
+                   //請特別留意result 更新後竟然是undefined 並沒有回傳值 這個坑很大,所以上方successHandle(res,result) 執行會有異常
+                   console.log(result) 
+                   //以下寫法雖然可以取得所有資料,但有盲點就是沒更新也會取回資料 會誤以為修改成功
+                   //再度改寫
+                   const idObject = { _id: id };
+                   const data = await Room.find(idObject);  //find 要傳入一個物件
+                   successHandle(res,data)
+                         
+                      }
+
+
+                else {
                  console.log("update error")
                  return error
             }
